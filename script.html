@@ -1,0 +1,25 @@
+<!-- ...existing code... -->
+
+<body>
+    <h1>JavaScript Code Tester</h1>
+    <textarea id="codeInput" placeholder="Schreibe hier deinen JavaScript-Code..."></textarea><br>
+    <button onclick="runCode()">Code ausführen</button>
+    <div id="output"></div>
+    <br>
+    <a href="https://discord.com/invite/x7U24R64kg" target="_blank" style="color:#fff; text-decoration:underline; font-size:18px;">
+        Komm auf meinen Discord!
+    </a>
+    <script>
+        function runCode() {
+            const code = document.getElementById('codeInput').value;
+            const outputDiv = document.getElementById('output');
+            try {
+                const result = eval(code);
+                outputDiv.textContent = result !== undefined ? result : 'Kein Rückgabewert';
+            } catch (e) {
+                outputDiv.textContent = 'Fehler: ' + e.message;
+            }
+        }
+    </script>
+</body>
+<!-- ...existing code... -->
